@@ -10,10 +10,10 @@
 
                     <div class="widget-header">
                         <i class="icon-user"></i>
-                        <h3>Бренд: {{bonusInfo.brands}}}</h3>
+                        <h3>Бренд: {{bonusInfo.brands[0]}}</h3>
                     </div> <!-- /widget-header -->
                     <div class="widget-content">
-                        <h3>Всего бонусов: {{bonusInfo.bonus}}</h3>
+                        <h3>Всего бонусов: {{bonusInfo.bonus}} </h3>
                     </div> <!-- /widget-header -->
 
                     <div class="widget-content">
@@ -24,20 +24,20 @@
 
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="text" class="span4" id="cardId" placeholder="Номер карты получателя">
+                                        <input type="text" class="span4" id="cardId" ng-model="targetCard" placeholder="Номер карты получателя">
                                     </div> <!-- /controls -->
                                 </div> <!-- /control-group -->
 
 
                                 <div class="control-group">
                                     <div class="controls">
-                                        <input type="text" class="span4" id="bonusToShare" placeholder="Кол-во бонусов">
+                                        <input type="text" class="span4" id="bonusToShare" ng-model="sum" placeholder="Кол-во бонусов">
                                     </div> <!-- /controls -->
                                 </div> <!-- /control-group -->
 
                                 <div class="control-group">
                                     <div class="controls">
-                                        <button type="submit" class="btn btn-primary" ng-click="exchangeBonuses(22222 ,1111, 222222)">Передать бонусы</button>
+                                        <button type="submit" class="btn btn-primary" ng-click="exchangeBonuses(bonusInfo.id)">Передать бонусы</button>
                                     </div>		<!-- /controls -->
                                 </div> <!-- /control-group -->
 

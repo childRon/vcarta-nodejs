@@ -8,6 +8,29 @@ Bootstrap Admin Template by EGrappler.com
 [1. Global]
 */
 
+* { margin:0; padding:0; }
+html, body, #wrap { height: 100%; }
+body > #wrap {height: auto; min-height: 100%;}
+#main { padding-bottom: 150px; }  /* must be same height as the footer */
+#footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;}
+/* CLEAR FIX*/
+.clearfix:after {content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+.clearfix {display: inline-block;}
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+
 body {
 	background: #f9f6f1;
 	font: 13px/1.7em 'Open Sans';
@@ -56,6 +79,22 @@ textarea {
 }
 
 
+.app-content-loading {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    position: relative;
+}
+
+.loading-spinner {
+    position: absolute;
+    font-size: 50px;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
 
 
 
@@ -257,10 +296,8 @@ textarea {
 */
 
 .main {
-	padding-bottom: 2em;
-	
-	border-bottom: 1px solid #000;
 }
+
 
 
 
@@ -350,6 +387,7 @@ textarea {
 	margin-bottom: 2em;
 		
 	overflow: hidden;
+    padding-bottom: 150px;
 }
 	
 .widget-header {
@@ -368,8 +406,8 @@ textarea {
 	background:linear-gradient(top, #f9f6f1 0%,#f2efea 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f6f1', endColorstr='#f2efea');
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f6f1', endColorstr='#f2efea')";
-	
-	
+
+
 	border: 1px solid #d6d6d6;
 	
 	
@@ -411,8 +449,7 @@ textarea {
 
 
 .widget-content {
-	padding: 20px 15px 15px;
-	
+    padding: 15px;
 	background: #FFF;
 	
 	
@@ -434,9 +471,6 @@ textarea {
 	border-top-right-radius: 0;
 }
 
-.widget-nopad .widget-content {
-	padding: 0;
-}
 
 /* Widget Content Clearfix */	
 .widget-content:before,
@@ -457,7 +491,11 @@ textarea {
 /* Widget Table */
 
 .widget-table .widget-content {
-	padding: 0;
+	/*padding: 0;*/
+}
+
+form {
+    margin: 0 0 0;
 }
 
 .widget-table .table {

@@ -44,6 +44,8 @@
                 function ($http, $location, $scope, $rootScope, eventbus, $filter, bonusFactory, $routeParams) {
                     var currentId = $routeParams.id;
                     $rootScope.loading = true;
+                    $scope.targetCard = "";
+                    $scope.sum = "";
 
                     bonusFactory.getBonusInfo(currentId).then(function (response) {
                         var data = response.data;
@@ -54,9 +56,9 @@
                         console.error(error);
                     });
 
-                    $scope.exchangeBonuses = function(accountId, sum, targetCard){
+                    $scope.exchangeBonuses = function(accountId){
                         $rootScope.loading = true;
-                        bonusFactory.getBonusInfo(accountId, sum, targetCard).then(function (response) {
+                        bonusFactory.exchangeBonus(accountId, $scope.sum, $scope.targetCard).then(function (response) {
                             var data = response.data;
                             if(data.errors){
                                 $scope.message = data.errors[0].message;
